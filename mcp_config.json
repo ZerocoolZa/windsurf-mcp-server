@@ -1,0 +1,76 @@
+{
+  "mcpServers": {
+    "memory-plugin-mcp": {
+      "command": "npx",
+      "args": ["@memoryplugin/mcp-server"],
+      "cwd": "/Users/wws/pdf-ollama/CascadeProjects/windsurf-project/AI_GUI_PYQT6/M K Tender System",
+      "env": {
+        "NODE_PATH": "/opt/homebrew/lib/node_modules",
+        "MEMORY_PLUGIN_TOKEN": "windsurf_mcp_token_2025",
+        "DEBUG": "mcp-server:*"
+      },
+      "transport": {
+        "type": "http",
+        "url": "http://localhost:8002",
+        "method": "POST",
+        "timeout": 5000
+      },
+      "logging": {
+        "level": "debug",
+        "file": "/Users/wws/.codeium/windsurf/memory_plugin_mcp_server.log"
+      }
+    },
+    "local-python-mcp": {
+      "command": "python",
+      "args": ["/Users/wws/.codeium/windsurf/windsurf_mcp_server.py"],
+      "cwd": "/Users/wws/pdf-ollama/CascadeProjects/windsurf-project/AI_GUI_PYQT6/M K Tender System",
+      "env": {
+        "PYTHONPATH": "/Users/wws/pdf-ollama/CascadeProjects/windsurf-project/AI_GUI_PYQT6/M K Tender System/Cascade_Tools"
+      },
+      "transport": {
+        "type": "http",
+        "url": "http://localhost:8001",
+        "method": "POST"
+      }
+    }
+  },
+  "server": {
+    "name": "windsurf-mcp-multi",
+    "version": "1.1.0",
+    "capabilities": {
+      "tools": true,
+      "resources": true,
+      "memory": true
+    },
+    "urls": [
+      "http://localhost:8001",
+      "http://localhost:8002"
+    ],
+    "debug": true
+  },
+  "logging": {
+    "level": "DEBUG",
+    "file": "/Users/wws/.codeium/windsurf/mcp_server.log",
+    "files": [
+      "/Users/wws/.codeium/windsurf/mcp_server.log",
+      "/Users/wws/.codeium/windsurf/memory_plugin_mcp.log"
+    ]
+  },
+  "resources": {
+    "context_directory": "/Users/wws/pdf-ollama/CascadeProjects/windsurf-project/AI_GUI_PYQT6/M K Tender System/context",
+    "default_contexts": [
+      "sample_context.json",
+      "memory_plugin_context.json"
+    ]
+  },
+  "security": {
+    "allowed_origins": [
+      "http://localhost:8001",
+      "http://localhost:8002"
+    ],
+    "authentication": {
+      "enabled": true,
+      "methods": ["local", "memory-plugin"]
+    }
+  }
+}
