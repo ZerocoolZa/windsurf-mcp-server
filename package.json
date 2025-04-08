@@ -1,0 +1,13 @@
+{
+  "name": "windsurf-mcp-server",
+  "version": "1.0.0",
+  "description": "Model Context Protocol Server for Windsurf IDE",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"No tests specified\" && exit 0",
+    "lint": "echo \"No linting specified\" && exit 0"
+  },
+  "keywords": ["mcp", "windsurf", "server"],
+  "author": "Wayne Windsurf",
+  "license": "MIT"
+}
