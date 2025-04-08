@@ -39,4 +39,7 @@ Edit `mcp_config.json` to customize server settings.
 Pull requests are welcome. For major changes, please open an issue first.
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+### Copyright
+Copyright (c) 2025 Wayne Windsurf (ZerocoolZa)
